@@ -143,3 +143,25 @@ module MagComp(a, b, gt) ;
     wire [k:0] gtb = {((eqi[k-1:0] & gtb[k-1:0]) | gti[k-1:0]), 1'b0} ;
     wire gt = gtb[k] ;
 endmodule
+
+module counter(clk, reset, enable, count);
+    input clk, reset, enable;
+    output count;
+    parameter counterSize = 8;
+    
+    wire clk;
+    wire reset;
+    wire enable;
+    
+    reg[counterSize:0] counterOut;
+    
+    always @(posedge clk)
+    begin:
+        if (reset == 1'b1) begin
+            counterOut <= {counterSize{1'b0}}
+        end
+        else if (enable == 1'b1) begin
+            counterOut <= counterOut + 1;
+        end
+    end
+endmodule
