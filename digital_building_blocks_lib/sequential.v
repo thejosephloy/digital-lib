@@ -16,7 +16,7 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+// /Users/thejoey/Documents/digital_lib/digital_building_blocks_lib/sequential.v
 //////////////////////////////////////////////////////////////////////////////////
 
 
