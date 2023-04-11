@@ -35,3 +35,14 @@
   <li> Set up initial conditions and clock (if necessary)
   <li> Perform robust, comprehensive testing by checking correctness of all possible inputs (or a random sample of inputs if number of inputs is very large)
 </ol>
+
+## Compiling verilog using iverilog and gtkwave
+iverilog executableName module.v module_tb.v
+vvp executable
+gtkwave fileName.vcd
+
+The following lines must be included in the testbench file (typically in an initial-begin block) 
+```
+$dumnpfile("fileName.vcd")
+$dumpvars(0, fileName)
+```
