@@ -34,4 +34,4 @@
   <li> Set up monitor/display for parameters of interest
   <li> Set up initial conditions and clock (if necessary)
   <li> Perform robust, comprehensive testing by checking correctness of all possible inputs (or a random sample of inputs if number of inputs is very large)
-<\ol>
+</ol>
