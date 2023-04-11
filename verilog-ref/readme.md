@@ -37,9 +37,12 @@
 </ol>
 
 ## Compiling verilog using iverilog and gtkwave
+Compiling a verilog file and its testbench, running the executable, and displaying the waveform
+```
 iverilog executableName module.v module_tb.v
 vvp executable
 gtkwave fileName.vcd
+```
 
 The following lines must be included in the testbench file (typically in an initial-begin block) 
 ```
