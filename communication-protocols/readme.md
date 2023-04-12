@@ -1,5 +1,13 @@
 # Communication Protocols
 
-## SPI
+## Serial Communcation Protocols
 
-## I2C
+### Ethernet
+
+### I2C
+
+## Parallel Communcation Protocols
+
+### PCI
+
+### RS485
