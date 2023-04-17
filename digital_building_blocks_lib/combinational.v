@@ -19,11 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*
 module combinational(
 
     );
 endmodule
+*/
 
 module  Dec(a, b) ;
     parameter n = 2 ;
@@ -34,7 +35,7 @@ module  Dec(a, b) ;
     
     wire [m-1:0] b = 1<<a ;
 endmodule
-
+/*
 module Mux3(a2, a1, a0, s, b) ;
     parameter k = 1 ;
     input[k-1:0] a0, a1, a2 ; // inputs
@@ -165,3 +166,4 @@ module counter(clk, reset, enable, count);
         end
     end
 endmodule
+*/
