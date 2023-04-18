@@ -35,7 +35,7 @@ module  Dec(a, b) ;
     
     wire [m-1:0] b = 1<<a ;
 endmodule
-/*
+
 module Mux3(a2, a1, a0, s, b) ;
     parameter k = 1 ;
     input[k-1:0] a0, a1, a2 ; // inputs
@@ -46,7 +46,7 @@ module Mux3(a2, a1, a0, s, b) ;
                       ({k{s[1]}} & a1) |
                       ({k{s[2]}} & a2) ; 
 endmodule
-
+/*
 module Muxb3(a2, a1, a0, sb, b) ;
     parameter k = 1 ;
     input[k-1:0] a0, a1, a2 ; // inputs

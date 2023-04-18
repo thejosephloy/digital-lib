@@ -1,5 +1,5 @@
 $date
-	Mon Apr 17 16:34:38 2023
+	Tue Apr 18 15:54:57 2023
 $end
 $version
 	Icarus Verilog
@@ -9,37 +9,63 @@ $timescale
 $end
 $scope module combinational_tb $end
 $var wire 4 ! b [3:0] $end
-$var reg 2 " a [1:0] $end
-$scope module d1 $end
-$var wire 2 # a [1:0] $end
-$var wire 4 $ b [3:0] $end
+$var reg 4 " a0 [3:0] $end
+$var reg 4 # a1 [3:0] $end
+$var reg 4 $ a2 [3:0] $end
+$var reg 3 % s [2:0] $end
+$scope module mux $end
+$var wire 4 & a0 [3:0] $end
+$var wire 4 ' a1 [3:0] $end
+$var wire 4 ( a2 [3:0] $end
+$var wire 4 ) b [3:0] $end
+$var wire 3 * s [2:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+bx *
+bx )
+bx (
+bx '
+bx &
+bx %
 bx $
 bx #
 bx "
 bx !
 $end
 #5000
-b1 !
-b1 $
-b0 "
+b0 !
+b0 )
+b0 %
+b0 *
+b0 $
+b0 (
 b0 #
+b0 '
+b0 "
+b0 &
 #10000
-b10 !
-b10 $
-b1 "
-b1 #
-#15000
-b100 !
 b100 $
-b10 "
+b100 (
 b10 #
+b10 '
+b1 "
+b1 &
+#15000
+b1 !
+b1 )
+b1 %
+b1 *
 #20000
-b1000 !
-b1000 $
-b11 "
-b11 #
+b10 !
+b10 )
+b10 %
+b10 *
+#25000
+b100 !
+b100 )
+b100 %
+b100 *
+#30000
