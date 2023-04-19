@@ -1,5 +1,5 @@
 $date
-	Tue Apr 18 15:54:57 2023
+	Wed Apr 19 13:35:39 2023
 $end
 $version
 	Icarus Verilog
@@ -12,19 +12,39 @@ $var wire 4 ! b [3:0] $end
 $var reg 4 " a0 [3:0] $end
 $var reg 4 # a1 [3:0] $end
 $var reg 4 $ a2 [3:0] $end
-$var reg 3 % s [2:0] $end
-$scope module mux $end
+$var reg 2 % sb [1:0] $end
+$scope module muxb $end
 $var wire 4 & a0 [3:0] $end
 $var wire 4 ' a1 [3:0] $end
 $var wire 4 ( a2 [3:0] $end
-$var wire 4 ) b [3:0] $end
-$var wire 3 * s [2:0] $end
+$var wire 2 ) sb [1:0] $end
+$var wire 4 * s [3:0] $end
+$var wire 4 + b [3:0] $end
+$scope module d $end
+$var wire 2 , a [1:0] $end
+$var wire 3 - b [2:0] $end
+$upscope $end
+$scope module m $end
+$var wire 4 . a0 [3:0] $end
+$var wire 4 / a1 [3:0] $end
+$var wire 4 0 a2 [3:0] $end
+$var wire 4 1 b [3:0] $end
+$var wire 3 2 s [2:0] $end
+$upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-bx *
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+b0xxx *
 bx )
 bx (
 bx '
@@ -37,35 +57,64 @@ bx !
 $end
 #5000
 b0 !
-b0 )
+b0 +
+b0 1
+b1 2
+b1 *
+b1 -
 b0 %
-b0 *
+b0 )
+b0 ,
 b0 $
 b0 (
+b0 0
 b0 #
 b0 '
+b0 /
 b0 "
 b0 &
+b0 .
 #10000
+b1 !
+b1 +
+b1 1
 b100 $
 b100 (
+b100 0
 b10 #
 b10 '
+b10 /
 b1 "
 b1 &
+b1 .
 #15000
-b1 !
-b1 )
-b1 %
-b1 *
-#20000
 b10 !
-b10 )
-b10 %
+b10 +
+b10 1
+b10 2
 b10 *
-#25000
+b10 -
+b1 %
+b1 )
+b1 ,
+#20000
 b100 !
-b100 )
-b100 %
+b100 +
+b100 1
+b100 2
 b100 *
+b100 -
+b10 %
+b10 )
+b10 ,
+#25000
+b1 !
+b1 +
+b1 1
+b1 2
+b1 *
+b1 -
+b0 %
+b0 )
+b0 ,
 #30000

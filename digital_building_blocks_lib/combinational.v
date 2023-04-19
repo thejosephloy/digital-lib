@@ -46,18 +46,18 @@ module Mux3(a2, a1, a0, s, b) ;
                       ({k{s[1]}} & a1) |
                       ({k{s[2]}} & a2) ; 
 endmodule
-/*
+
 module Muxb3(a2, a1, a0, sb, b) ;
     parameter k = 1 ;
     input[k-1:0] a0, a1, a2 ; // inputs
-    input[2:0] sb ; // one hot select
+    input[1:0] sb ; // binary select
     output[k-1:0] b;
     wire [3:0] s ;
     
-    Dec #(2, 3) d(sb, b) ;
+    Dec #(2, 3) d(sb, s) ;
     Mux3 #(k) m(a2, a1, a0, s, b) ;
 endmodule
-
+/*
 module Mux6a(a5, a4, a3, a2, a1, a0, s, b) ;
     parameter k = 1 ;
     input [k-1:0] a0, a1, a2, a3, a4, a5  ; // inputs
