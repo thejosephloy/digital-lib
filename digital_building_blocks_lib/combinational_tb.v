@@ -16,7 +16,7 @@ reg [2:0] s;
 wire [3:0] b;
 
 Mux3 #(k) mux(a2, a1, a0, s, b);
-*/
+
 
 parameter k = 4;
 reg [k-1 : 0] a0, a1, a2;
@@ -24,6 +24,17 @@ reg [1:0] sb;
 wire [k-1:0] b;
 
 Muxb3 #(k) muxb(a2, a1, a0, sb, b);
+*/
+
+parameter k = 4;
+reg [k-1 : 0] a0, a1, a2, a3, a4, a5;
+reg [5:0] s;
+wire [k-1:0] b;
+
+Mux6a #(k) mux6(a0, a1, a2, a3, a4, a5, s, b);
+
+
+
 
 // Test each possible input of a for decoder
 /*
@@ -68,8 +79,8 @@ initial begin
     $finish;
     
 end
-*/
 
+// muxb3 test 
 initial begin
     $monitor("At time %t, a0 = %d, a1 = %d, a2 = %d, sb = %d, b = %d", $time, a0, a1, a2, sb, b);
     $dumpfile("combinational_tb.vcd");
@@ -100,6 +111,48 @@ initial begin
     $finish;
     
 end
+
+*/
+
+// mux6 test
+initial begin
+    $monitor("At time %t, a0 = %d, a1 = %d, a2 = %d, a3 = %d, a4 = %d, a5 = %d, s = %d, b = %d", $time, a0, a1, a2, a3, a4, a5, s, b);
+    $dumpfile("combinational_tb.vcd");
+    $dumpvars(0, combinational_tb);
+    
+    # 5
+    a0 = 1;
+    a1 = 2;
+    a2 = 3;
+    a3 = 4;
+    a4 = 5;
+    a5 = 6;
+    
+    # 5
+    
+    s = 6'b000001;
+    
+    # 5
+
+    s = 6'b000010;
+    
+    # 5
+    s = 6'b000100;
+    
+    #5
+    s = 6'b001000;
+    
+    #5
+    s = 6'b010000;
+    
+    #5
+    s = 6'b100000;
+    #5
+    
+    $finish;
+    
+end
+
 
 
 endmodule

@@ -57,7 +57,7 @@ module Muxb3(a2, a1, a0, sb, b) ;
     Dec #(2, 3) d(sb, s) ;
     Mux3 #(k) m(a2, a1, a0, s, b) ;
 endmodule
-/*
+
 module Mux6a(a5, a4, a3, a2, a1, a0, s, b) ;
     parameter k = 1 ;
     input [k-1:0] a0, a1, a2, a3, a4, a5  ; // inputs
@@ -66,11 +66,10 @@ module Mux6a(a5, a4, a3, a2, a1, a0, s, b) ;
     wire [k-1:0] ba, bb ;
     wire [k-1:0] b = ba | bb ;
     
-    Dec #(2, 3) d(sb, b) ;
     Mux3 #(k) ma(a2, a1, a0, s[2:0], ba) ;
     Mux3 #(k) mb(a5, a4, a3, s[5:3], bb) ;
 endmodule
-
+/*
 module Enc42(a, b) ;
     input [3:0] a ;    
     output [1:0] b ;
