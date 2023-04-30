@@ -83,7 +83,7 @@ module Enc42a(a, b, c) ;
     wire [1:0] b = {a[3] | a[2], a[3] | a[1]} ;
     wire c = |a ;
 endmodule
-/*
+
 module Enc164(a, b) ;
     input [15:0] a ;
     output [3:0] b ;
@@ -117,8 +117,9 @@ module RArb(r, g) ;
     output [n-1:0] g ;
     wire [n-1:0] c = {1'b1, (~r[n-1:1] & c[n-1:1])} ;
     wire [n-1:0] g = r & c ;
-endmodule
+endmodule 
 
+/*
 module PriorityEncoder83(r, b) ; 
     input [7:0] r ;
     output [2:0] b ;
@@ -126,6 +127,7 @@ module PriorityEncoder83(r, b) ;
     Arb #(8) a(r, g) ; 
     Enc83 e(g, b) ;
 endmodule
+*/
 
 module EqComp(a, b, eq) ;
     parameter k = 8 ;
@@ -144,25 +146,4 @@ module MagComp(a, b, gt) ;
     wire gt = gtb[k] ;
 endmodule
 
-module counter(clk, reset, enable, count);
-    input clk, reset, enable;
-    output count;
-    parameter counterSize = 8;
-    
-    wire clk;
-    wire reset;
-    wire enable;
-    
-    reg[counterSize:0] counterOut;
-    
-    always @(posedge clk)
-    begin:
-        if (reset == 1'b1) begin
-            counterOut <= {counterSize{1'b0}}
-        end
-        else if (enable == 1'b1) begin
-            counterOut <= counterOut + 1;
-        end
-    end
-endmodule
-*/
+

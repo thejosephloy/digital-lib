@@ -38,19 +38,44 @@ Mux6a #(k) mux6(a0, a1, a2, a3, a4, a5, s, b);
    wire [1:0] b;
 
    Enc42 enc42(a, b);
-*/
+
 
    reg[3:0] a;
    wire [1:0] b;
    wire	      c;
    Enc42a enc42a(a, b, c);
+
+
+   reg[15:0] a;
+   wire [3:0] b;
+
+   Enc164 enc164(a, b);
+
+   reg[7:0] r;
+   wire [7:0] g;
+
+   Arb arb(r, g);
+
+   reg[7:0] r;
+   wire [7:0] g;
+
+   RArb rarb(r, g);
+
+   reg[7:0] r;
+   wire [2:0] b;
+
+   PriorityEncoder83 pe83(r, b);
+
+   reg[7:0] a, b;
+   wire	    eq;
+
+   EqComp ec(a, b, eq);
+*/
+   reg[7:0] a, b;
+   wire	    gt;
+
+   MagComp mc(a, b, gt);
    
- 
- 
- 
-    
-
-
 // Test each possible input of a for decoder
 /*
 initial begin
@@ -211,7 +236,7 @@ end
       # 5
 	$finish;	
    end 
-*/
+
 
    // Enc42a test
    initial begin
@@ -221,7 +246,6 @@ end
 
       # 5
 	a = 0;
-
       # 5
 	a = 1;
       # 5
@@ -255,7 +279,132 @@ end
       # 5
 	$finish;	
    end 
+
+   // Enc164 test
+   initial begin
+      $monitor("At time %t, a= %d, b = %d", $time, a, b);
+      $dumpfile("combinational_tb.vcd");
+      $dumpvars(0, combinational_tb);
+
+      # 5
+	a = 0;
+      repeat (50) # 5 a = a + 1;
+       
+      $finish;
+   end
   
+   // Arb test
+   initial begin
+      $monitor("At time %t, r= %d, g= %d", $time, r, g);
+      $dumpfile("combinational_tb.vcd");
+      $dumpvars(0, combinational_tb);
+
+      # 5
+	r = 0;
+      repeat (50) # 5 r = r + 1;
+       
+      $finish;
+   end 
+
+   // RArb test
+   initial begin
+      $monitor("At time %t, r= %d, g= %d", $time, r, g);
+      $dumpfile("combinational_tb.vcd");
+      $dumpvars(0, combinational_tb);
+
+      # 5
+	r = 0;
+      repeat (50) # 5 r = r + 1;
+       
+      $finish;
+   end
+
+    // Priority Encoder test
+   initial begin
+      $monitor("At time %t, r= %d, b= %d", $time, r, b);
+      $dumpfile("combinational_tb.vcd");
+      $dumpvars(0, combinational_tb);
+
+      # 5
+	r = 0;
+      repeat (50) # 5 r = r + 1;
+       
+      $finish;
+   end
+
+   initial begin
+      $monitor("At time %t, a= %d, b= %d, eq= %d", $time, a, b, eq);
+      $dumpfile("combinational_tb.vcd");
+      $dumpvars(0, combinational_tb);
+
+      # 5
+      a = 0;
+      b = 0;
+      # 5
+      a = 1;
+      b = 1;
+      # 5
+      a = 27;
+      b = 27;
+      # 5
+      a = 1;
+      b = 2;
+      
+      
+        
+      
+      repeat (50) begin
+	 # 5
+	 a = a + 1;
+	 b = b + 1;
+	 
+      end
+      
+       
+      $finish;
+   end
+*/
+initial begin
+      $monitor("At time %t, a= %d, b= %d, gt= %d", $time, a, b, gt);
+      $dumpfile("combinational_tb.vcd");
+      $dumpvars(0, combinational_tb);
+
+      # 5
+      a = 0;
+      b = 0;
+      # 5
+      a = 1;
+      b = 1;
+      # 5
+      a = 27;
+      b = 27;
+      # 5
+      a = 1;
+      b = 2;
+      
+      
+        
+      
+      repeat (50) begin
+	 # 5
+	 a = a + 1;
+	 b = b + 1;
+      end
+   
+      # 5
+      a = 2;
+      b = 1;
+      
+	 
+      repeat (50) begin
+	 # 5
+	 a = a + 1;
+	 b = b + 1;
+      end
+      
+       
+      $finish;
+   end   
    
 endmodule
 
