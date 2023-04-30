@@ -69,7 +69,7 @@ module Mux6a(a5, a4, a3, a2, a1, a0, s, b) ;
     Mux3 #(k) ma(a2, a1, a0, s[2:0], ba) ;
     Mux3 #(k) mb(a5, a4, a3, s[5:3], bb) ;
 endmodule
-/*
+
 module Enc42(a, b) ;
     input [3:0] a ;    
     output [1:0] b ;
@@ -83,7 +83,7 @@ module Enc42a(a, b, c) ;
     wire [1:0] b = {a[3] | a[2], a[3] | a[1]} ;
     wire c = |a ;
 endmodule
-
+/*
 module Enc164(a, b) ;
     input [15:0] a ;
     output [3:0] b ;
