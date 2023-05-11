@@ -155,7 +155,7 @@ module arithmetic_tb;
       # 10
 	$finish;
    end
-   */
+   
 
    reg[1:0] a, b; 
    reg sub;
@@ -217,6 +217,10 @@ module arithmetic_tb;
       
       # 10
 	$finish;
-   end
+   end // initial begin
+
+   */
+   
+   
 endmodule // arithmetic_tb
 
