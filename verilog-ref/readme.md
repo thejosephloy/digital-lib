@@ -39,13 +39,13 @@
 ## Compiling verilog using iverilog and gtkwave
 Compiling a verilog file and its testbench, running the executable, and displaying the waveform
 ```
-iverilog executableName module.v module_tb.v
-vvp executable
-gtkwave fileName.vcd
+iverilog -o module_tb module.v module_tb.v
+vvp module_tb
+gtkwave module_tb.vcd
 ```
 
 The following lines must be included in the testbench file (typically in an initial-begin block) 
 ```
-$dumnpfile("fileName.vcd")
-$dumpvars(0, fileName)
+$dumpfile("module_tb.vcd")
+$dumpvars(0, module_tb)
 ```
