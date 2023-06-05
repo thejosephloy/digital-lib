@@ -19,6 +19,14 @@ Modules of some of the most important block in digital systems engineering
 
 ## Sequential 
 
+### Shift Register
+
+### Counter 
+
+### RAM
+
+### ROM
+
 ### Flip Flops
 
 #### D Flip Flop
